@@ -1,6 +1,6 @@
 --- # Pierwszy playbook
-- hosts: servers
-  user: ansible
+- hosts: all
+  user: lab-ansible
   become: yes 
   connection: ssh
   gather_facts: yes
