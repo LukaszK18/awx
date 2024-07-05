@@ -1,6 +1,6 @@
 --- # Pierwszy playbook
 - hosts: all
-  user: tech-ansible 
+  user: root 
   connection: ssh
   gather_facts: yes
   tasks:
