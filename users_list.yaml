@@ -1,8 +1,8 @@
---- # Pierwszy playbook
+--- # Drugi playbook
 - hosts: all
-  user: root 
+  user: root
   connection: ssh
   gather_facts: yes
   tasks:
-   - name: Instalacja pierwszej aplikacji
-     action: yum name=httpd state=installed
+   - name: Pobranie listy users
+     ansible.builtin.shell: cat /etc/passwd
