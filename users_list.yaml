@@ -1,7 +1,5 @@
 --- # Pierwszy playbook
-- hosts: all
-  user: lab-ansible
-  become: yes 
+- hosts: all 
   connection: ssh
   gather_facts: yes
   tasks:
