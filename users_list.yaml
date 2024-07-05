@@ -1,0 +1,9 @@
+--- # Pierwszy playbook
+- hosts: servers
+  user: ansible
+  become: yes 
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Instalacja pierwszej aplikacji
+     action: yum name=httpd state=installed
