@@ -1,6 +1,5 @@
 --- # Drugi playbook
 - hosts: all
-  user: root
   connection: ssh
   gather_facts: yes
   tasks:
