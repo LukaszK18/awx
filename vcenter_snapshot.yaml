@@ -1,14 +1,17 @@
---- # Vcenter Snapshot
+---
 - hosts: all
-  connection: ssh
-  gather_facts: yes
+  gather_facts: false
+
   tasks:
   - name: Create a snapshot
     community.vmware.vmware_guest_snapshot:
-    datacenter: "{{ datacenter_name }}"
-    folder: "/{{ datacenter_name }}/ansible/"
-    name: "{{ guest_name }}"
-    state: present
-    snapshot_name: snap1
-    description: snap1_description
-  delegate_to: localhost
+      hostname: "{{ vcenter_host }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      datacenter: "lab.akmf"
+      folder: "lab.akmf/ansible"
+      name: "lab-ansible"
+      state: present
+      snapshot_name: ansible_snapshot
+      description: ansible_snapshot
+    delegate_to: localhost
