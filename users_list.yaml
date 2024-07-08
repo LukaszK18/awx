@@ -4,4 +4,4 @@
   gather_facts: yes
   tasks:
    - name: Pobranie listy users
-     ansible.builtin.shell: cat /etc/passwd
+     ansible.builtin.shell: awk -F":" '{ print $1 }' /etc/passwd
