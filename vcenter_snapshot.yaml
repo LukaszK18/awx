@@ -1,0 +1,14 @@
+--- # Vcenter Snapshot
+- hosts: all
+  connection: ssh
+  gather_facts: yes
+  tasks:
+  - name: Create a snapshot
+    community.vmware.vmware_guest_snapshot:
+    datacenter: "{{ datacenter_name }}"
+    folder: "/{{ datacenter_name }}/vm/"
+    name: "{{ guest_name }}"
+    state: present
+    snapshot_name: snap1
+    description: snap1_description
+  delegate_to: localhost
