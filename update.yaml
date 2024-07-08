@@ -1,0 +1,7 @@
+--- # only update
+- hosts: all
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Pobranie aktualizacji
+     ansible.builtin.shell: yum update -y
